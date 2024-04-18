@@ -1,0 +1,66 @@
+{% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+    html,
+  body {
+    font-family: "Rubik", sans-serif;
+  }
+
+  @media (min-width: 1024px) {
+    .top-navbar {
+      display: inline-flex !important;
+    }
+</style>
+<nav class="flex items-center bg-green-900 p-3 flex-wrap">
+    <a href="#" class="p-2 mr-4 inline-flex items-center">
+        <i class="bi bi-bag-heart"></i>
+        <h6>🛩</h6>
+        <span class="text-xl text-white font-bold uppercase tracking-wide">Shop D.B.A</span
+        >
+    </a>
+    <button class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler" data-target="#navigation">
+        <i class="material-icons">menu</i>
+    </button>
+    <div
+            class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto"
+            id="navigation"
+    >
+        <div class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
+            <a href="{% url 'home' %}" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                <span>Home</span>
+            </a>
+            <a href="" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                <span>Men clothes</span>
+            </a>
+            <a href="#" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                <span>Services</span>
+            </a>
+            <a href="#" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                <span>Gallery</span>
+            </a>
+            <a href="#" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                <span>Products</span>
+            </a>
+            <a href="#" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                <span>Contact Us</span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+    $(".nav-toggler").each(function(_, navToggler) {
+      var target = $(navToggler).data("target");
+      $(navToggler).on("click", function() {
+        $(target).animate({
+          height: "toggle"
+        });
+      });
+    });
+  });
+
+</script>
